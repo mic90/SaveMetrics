@@ -1,0 +1,8 @@
+bin
+build
+.build
+.bin
+*pro.user*
+*.a
+*.dll
+.lib
