@@ -39,7 +39,6 @@ WindowCharts::WindowCharts(QWidget *parent) :
     m_plot.xAxis->setTicker(dateTicker);
     //show/hide scatter based on current zoom level
     connect(m_plot.xAxis, QOverload<const QCPRange&>::of(&QCPAxis::rangeChanged), this, [this](const QCPRange &newRange) {
-        ;
         if(newRange.size() < FIVE_YEARS_IN_SEC && !m_scatterVisible)
         {
             m_scatterVisible = true;
@@ -52,6 +51,11 @@ WindowCharts::WindowCharts(QWidget *parent) :
         }
     });
     connect(&m_plot, &QCustomPlot::mouseMove, this, [this](QMouseEvent *event){
+        if(m_plot.graphCount() == 0)
+        {
+            return;
+        }
+
         double value = 0.0;
         double key = 0.0;
         m_plot.graph(0)->pixelsToCoords(QPointF(event->pos()), key, value);
@@ -79,6 +83,10 @@ WindowCharts::~WindowCharts()
 
 void WindowCharts::onCalculationFinished(const QHash<QString, QVariantList> &data)
 {
+    if(data.isEmpty())
+    {
+        return;
+    }
     while(!m_tracers.isEmpty())
     {
         m_plot.removeItem(m_tracers.takeFirst());

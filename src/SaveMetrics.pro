@@ -8,7 +8,7 @@ QT       += core gui widgets printsupport
 CONFIG   += c++14
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = QtLua
+TARGET = SaveMetrics
 TEMPLATE = app
 
 DESTDIR = $$PWD/../bin

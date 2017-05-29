@@ -1,5 +1,6 @@
 # SaveMetrics
-SaveMetrics is application for personal savings calculation :) It has embedded lua interpreter so one should have full freedom in writing proper calculations or even complex financial models.
+SaveMetrics is application for personal savings calculation. 
+It has embedded lua interpreter so one should have full freedom in writing proper scripts or even complex financial models.
 
 ![alt text](https://github.com/mic90/SaveMetrics/blob/master/screenshots/screen_0.png)
 ## Usage
