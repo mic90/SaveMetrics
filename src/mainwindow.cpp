@@ -9,7 +9,7 @@
 #include <script/luarocks.h>
 
 const QString APP_NAME = "SaveMetrics";
-const QString VERSION = "0.3.0";
+const QString VERSION = "0.8.0";
 const int STATUS_MESSAGE_TIMEOUT = 2000;
 
 MainWindow::MainWindow(QWidget *parent) :

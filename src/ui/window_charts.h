@@ -21,6 +21,7 @@ public slots:
 
 private:
     QString beautifyVarName(const QString& name);
+    void updateScatterStyle();
 
 protected:
     virtual void closeEvent(QCloseEvent *event) override;
@@ -28,7 +29,12 @@ protected:
 private:
     Ui::WindowCharts *ui;
     QCustomPlot m_plot;
+    QCPItemStraightLine *m_horLineIndicator;
+    QCPItemStraightLine *m_verLineIndicator;
+    QList<QCPItemTracer*> m_tracers;
+    QStringList m_graphNames;
     QList<QColor> m_graphColors;
+    bool m_scatterVisible = false;
 };
 
 #endif // WINDOW_CHARTS_H

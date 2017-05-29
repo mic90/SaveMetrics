@@ -98,7 +98,7 @@ bool ScriptEngineLua::start()
         timer.start();
 
         runLuaFunction(m_setup);
-        int currentMonth = 1;
+        int currentMonth = QDateTime::currentDateTime().date().addMonths(1).month();
         int currentYear = m_yearsFrom;
         QHash<QString, QVariantList> globals;
         for(int i=1; i<m_months; i++)
