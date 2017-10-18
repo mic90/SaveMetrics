@@ -113,8 +113,8 @@ bool Project::save()
 {
     if(!m_device->open(QIODevice::WriteOnly | QIODevice::Truncate))
     {
-        return false;
         m_device->close();
+        return false;
     }
     m_device->write(toJson().toUtf8());
     m_device->close();

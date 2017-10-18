@@ -13,13 +13,6 @@ It has embedded lua interpreter so one should have full freedom in writing prope
 + Run and see the results, by default scripts are processed on file save
 ## Building
 To build the application You should have fully working installation of Qt 5.8.x.
-Before building project build required dependencies:
-+ Build luajit from included sources -> run /external/luajit-2.0.4/build_windows.bat
-+ Build qscintilla from included sources -> /external/QScintilla_gpl-2.10/Qt4Qt5/qscintilla.pro
-+ Build qslog from included sources -> /external/qslog/qslog.pro
-## LuaRocks integration
-To use LuaRocks for installing additional lua libraries, run setup_windows.bat from project root directory.
-
-After that You can use installed libraries by simply including them in scripts: require('socket')
+Open the SaveMetrics.pro file in the QtCreator and run the build, all dependencies should be built automatically 
 ## License
 This project is licensed under the GPL License
